@@ -29,8 +29,7 @@ If you have the source code and want to build the environment locally:
 
 ```
 
-2. **Run the container (Volume Mapping):**
-*(This will generate the 17 result images in your current folder)*
+2. Run the container (Volume Mapping):
 ```bash
 docker run -v "%cd%:/app" social-informatics-project
 
