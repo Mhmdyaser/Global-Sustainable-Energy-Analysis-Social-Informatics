@@ -54,10 +54,13 @@ Open your CMD in the folder where the `.tar` file is located and run:
 
 1. **Load the image into Docker**
    ```bash
-docker load -i social-informatics.tar
+   
+ docker load -i social-informatics.tar
+
+ 
  ```
 
-2.  **Run the container**
+3.  **Run the container**
 
 ```bash
 docker run -v "%cd%:/app" social-informatics-project
