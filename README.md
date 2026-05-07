@@ -25,9 +25,9 @@ If you have the source code and want to build the environment locally:
 
 1. **Build the image:**
    ```bash
- docker build -t social-informatics-project .
+  docker build -t social-informatics-project .
 
-
+   ```
 3. **Run the container (Volume Mapping):**
 
 ```bash
@@ -57,8 +57,7 @@ Open your CMD in the folder where the `.tar` file is located and run:
    
  docker load -i social-informatics.tar
 
- 
- ```
+   ```
 
 3.  **Run the container**
 
