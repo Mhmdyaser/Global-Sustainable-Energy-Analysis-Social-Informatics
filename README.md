@@ -59,9 +59,7 @@ docker load -i social-informatics.tar
 # Run the container (Mapping results to your folder)
 docker run -v "%cd%:/app" social-informatics-project
 
-```
 
----
 
 ## 📊 Generated Insights
 
