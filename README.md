@@ -1,3 +1,4 @@
+ 
 # 🌍 Global Sustainable Energy Analysis - Social Informatics
 
 An end-to-end data science pipeline designed to explore the interaction between **Sustainable Energy indicators** and **Socio-economic growth**. This project analyzes global trends (2000-2020) to predict environmental impact and GDP growth, fully containerized using **Docker** to ensure consistency across all environments.
@@ -23,65 +24,72 @@ An end-to-end data science pipeline designed to explore the interaction between 
 If you have the source code and want to build the environment locally:
 
 1. **Build the image:**
-   ```bash
-   docker build -t social-informatics-project .
-Run the container (Volume Mapping):
-(This will generate the 17 result images in your current folder)
+   ```bash
+ docker build -t social-informatics-project .
 
-Bash
-docker run --rm -v "%cd%:/app" social-informatics-project
-📦 Portable Version (Option 2: Pre-built Image)
+
+3. **Run the container (Volume Mapping):**
+
+```bash
+docker run -v "%cd%:/app" social-informatics-project
+
+```
+
+---
+
+## 📦 Portable Version (Option 2: Pre-built Image)
+
 Use this option if you want to run the project without building it from the Dockerfile.
 
-1. Download the Image
-Download social-informatics.tar - Size: ~250 MB
+### 1. Download the Image
 
-2. Load and Execution
-Open your CMD in the folder where the .tar file is located and run:
+* **[Download social-informatics.tar](https://www.google.com/search?q=%D8%B1%D8%A7%D8%A8%D8%B7_%D8%A7%D9%84%D8%AA%D8%AD%D9%85%D9%8A%D9%84_%D9%87%D9%86%D8%A7)** - **Size:** ~250 MB
 
-Bash
-# Load the image into Docker
+### 2. Load and Execution
+
+Open your CMD in the folder where the `.tar` file is located and run:
+
+
+
+
+1. **Load the image into Docker**
+   ```bash
 docker load -i social-informatics.tar
+ ```
 
-# Run the container (Mapping results to your folder)
-docker run --rm -v "%cd%:/app" social-informatics-project
-📊 Generated Insights
+2.  **Run the container**
+
+```bash
+docker run -v "%cd%:/app" social-informatics-project
+
+```
+
+
+
+---
+
+## 📊 Generated Insights
+
 After running the container, you will find 17 PNG images in your directory:
 
-01_missing_values.png
+1. `01_missing_values.png`
+2. `02_correlation_heatmap.png`
+3. `03_top_15_co2.png`
+4. `04_top_10_countries_co2.png`
+5. `05_co2_by_year.png`
+6. `06_co2_boxplot.png`
+7. `07_co2_scatter_subplots.png`
+8. `08_top_10_years_co2.png`
+9. `09_fossil_fuels_line.png`
+10. `10_top_10_fossil_bar.png`
+11. `11_fossil_boxplot.png`
+12. `12_renewables_line.png`
+13. `13_renewables_boxplot.png`
+14. `14_land_area_bar.png`
+15. `15_top_10_land.png`
+16. `16_big_countries_co2.png`
+17. `17_feature_importance.png`
 
-02_correlation_heatmap.png
+**Developed by:** Team Code X
 
-03_top_15_co2.png
-
-04_top_10_countries_co2.png
-
-05_co2_by_year.png
-
-06_co2_boxplot.png
-
-07_co2_scatter_subplots.png
-
-08_top_10_years_co2.png
-
-09_fossil_fuels_line.png
-
-10_top_10_fossil_bar.png
-
-11_fossil_boxplot.png
-
-12_renewables_line.png
-
-13_renewables_boxplot.png
-
-14_land_area_bar.png
-
-15_top_10_land.png
-
-16_big_countries_co2.png
-
-17_feature_importance.png
-
-Developed by: Team Code X
-
-Field: Faculty of Computers and Artificial Intelligence (FCAI) 🚀
+**Field:** Faculty of Computers and Artificial Intelligence (FCAI) 🚀
