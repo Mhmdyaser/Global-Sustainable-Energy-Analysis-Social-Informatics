@@ -24,10 +24,11 @@ An end-to-end data science pipeline designed to explore the interaction between 
 If you have the source code and want to build the environment locally:
 
 1. **Build the image:**
-   ```bash
-  docker build -t social-informatics-project .
+ 
+```bash
+docker build -t social-informatics-project .
 
-   ```
+```
 3. **Run the container (Volume Mapping):**
 
 ```bash
@@ -53,12 +54,11 @@ Open your CMD in the folder where the `.tar` file is located and run:
 
 
 1. **Load the image into Docker**
-   ```bash
-   
- docker load -i social-informatics.tar
+ 
+```bash
+docker load -i social-informatics.tar
 
-   ```
-
+```
 3.  **Run the container**
 
 ```bash
