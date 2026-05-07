@@ -1,7 +1,4 @@
 
----
-
-```markdown
 # 🌍 Global Sustainable Energy Analysis - Social Informatics
 
 An end-to-end data science pipeline designed to explore the interaction between **Sustainable Energy indicators** and **Socio-economic growth**. This project analyzes global trends (2000-2020) to predict environmental impact and GDP growth, fully containerized using **Docker** to ensure consistency across all environments.
@@ -88,7 +85,7 @@ After running the container, you will find 17 PNG images in your directory:
 16. `16_big_countries_co2.png`
 17. `17_feature_importance.png`
 
-**Developed by:** Mohamed Yasser Salah El-Naggar
+**Developed by:** Team Code X
 
 **Field:** Faculty of Computers and Artificial Intelligence (FCAI) 🚀
 
