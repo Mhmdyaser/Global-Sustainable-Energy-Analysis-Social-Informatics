@@ -396,50 +396,82 @@ fig13.write_image('17_feature_importance.png')
 print("Saved: 17_feature_importance.png")
 
 # Forward Selection
-print("\n--- Forward Selection ---")
+x = df.drop(columns=['CO2'])
+y = df['CO2']
+
 def forward_selection(X, y, model, threshold=0.01):
     selected_features = []
     remaining_features = list(X.columns)
     best_score = 0
+
     while remaining_features:
         scores = []
         for feature in remaining_features:
             features_to_test = selected_features + [feature]
-            X_train_f, X_test_f, y_train_f, y_test_f = train_test_split(X[features_to_test], y, test_size=0.3, random_state=42)
-            model.fit(X_train_f, y_train_f)
-            y_pred_f = model.predict(X_test_f)
-            score = r2_score(y_test_f, y_pred_f)
+            X_train, X_test, y_train, y_test = train_test_split(X[features_to_test], y, test_size=0.3, random_state=42)
+            model.fit(X_train, y_train)
+            y_pred = model.predict(X_test)
+            score = r2_score(y_test, y_pred)
             scores.append((feature, score))
+
         scores.sort(key=lambda x: x[1], reverse=True)
         best_feature, best_feature_score = scores[0]
+
         if best_feature_score - best_score > threshold:
             selected_features.append(best_feature)
             remaining_features.remove(best_feature)
             best_score = best_feature_score
-        else: break
-    return selected_features
+        else:
+            break
 
-selected = forward_selection(X, y, GradientBoostingRegressor(random_state=42))
-print("Selected Features:", selected)
+    return selected_features
+x=df.drop('CO2', axis=1)
+y=df['CO2']
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+# Display the shapes of the resulting datasets
+print("X_train shape:", X_train.shape)
+print("X_test shape:", X_test.shape)
+print("y_train shape:", y_train.shape)
+print("y_test shape:", y_test.shape)
 
 # Model after Feature selection
-print("\n--- Model after Feature Selection ---")
 y_train = y_train.loc[X_train.index]
 y_test = y_test.loc[X_test.index]
+
+models = {
+    'Linear Regression': LinearRegression(),
+    'Random Forest': RandomForestRegressor(random_state=42),
+    'Gradient Boosting': GradientBoostingRegressor(random_state=42),
+}
+
+best_model = None
+best_r2 = 0
 
 for model_name, model in models.items():
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
+
     r2 = r2_score(y_test, y_pred)
     mae = mean_absolute_error(y_test, y_pred)
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
     
-    print(f'\n{model_name}:')
+    submit = pd.DataFrame({
+        'Actual': y_test,
+        'Predicted': y_pred
+    }).reset_index(drop=True)
+
+    if r2 > best_r2:
+        best_r2 = r2
+        best_model = model_name 
+
+    print(f'{model_name}:')
     print(f'R2 Score: {r2:.2f}')
     print(f'MAE: {mae:.2f}')
     print(f'RMSE: {rmse:.2f}')
-    submit_final = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred}).reset_index(drop=True)
-    print(submit_final.head(5))
+    print(submit.head(5))
     print('----------------------------------------')
+
+
 
 print("\n--- Process Finished ---")
