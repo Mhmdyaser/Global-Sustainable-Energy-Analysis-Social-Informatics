@@ -435,7 +435,7 @@ print("X_test shape:", X_test.shape)
 print("y_train shape:", y_train.shape)
 print("y_test shape:", y_test.shape)
 
-# Model after Feature selection
+# Model after Forward Selection
 y_train = y_train.loc[X_train.index]
 y_test = y_test.loc[X_test.index]
 
