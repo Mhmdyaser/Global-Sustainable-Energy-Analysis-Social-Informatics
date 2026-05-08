@@ -44,7 +44,7 @@ Use this option if you want to run the project without building it from the Dock
 
 ### 1. Download the Image
 
-* **[Download social-informatics.tar](https://www.google.com/search?q=%D8%B1%D8%A7%D8%A8%D8%B7_%D8%A7%D9%84%D8%AA%D8%AD%D9%85%D9%8A%D9%84_%D9%87%D9%86%D8%A7)** - **Size:** ~250 MB
+* **[Download social-informatics.tar]([https://www.google.com/search?q=%D8%B1%D8%A7%D8%A8%D8%B7_%D8%A7%D9%84%D8%AA%D8%AD%D9%85%D9%8A%D9%84_%D9%87%D9%86%D8%A7](https://drive.google.com/file/d/1VEwmUuBaBHCPEGySlT940chZb6R8je8e/view?usp=drivesdk))** - **Size:** ~250 MB
 
 ### 2. Load and Execution
 
